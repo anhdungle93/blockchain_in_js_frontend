@@ -17,6 +17,10 @@ export class BlockchainService {
     this.generateWalletKeys();
   }
 
+  addressIsFromCurrentUser(address) {
+    return address === this.walletKeys[0].publicKey;
+  }
+
   getBlocks() {
     return this.blockchainInstance.chain;
   }
